@@ -25,7 +25,7 @@ print_message "Checkout origin/master"
 git checkout master && git pull
 
 # create the release, or pull if it already exists
-if [ -z `git branch --list $RELEASE_BRANCH` ]
+if [ -z `git branch -a | grep $RELEASE_BRANCH` ]
 then
     print_message "Creating release $RELEASE_BRANCH"
     git checkout -b $RELEASE_BRANCH
